@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.layout_shop_list.view.*
 class ShopListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items: List<ShoppingList> = ArrayList()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ShopListViewHolder(
             LayoutInflater.from(parent.context)
@@ -35,7 +36,7 @@ class ShopListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    fun submitList(shoppingList: List<ShoppingList>) {
+    fun submitList(shoppingList: ArrayList<ShoppingList>) {
         items = shoppingList
     }
 
@@ -60,7 +61,7 @@ class ShopListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 .error(R.drawable.ic_launcher_background)
 
 
-            Glide.with(itemView.context)
+            Glide.with(itemView)
                 .applyDefaultRequestOptions(requestOptions)
                 .load(shoppingList.itemImage)
                 .into(itemImage)

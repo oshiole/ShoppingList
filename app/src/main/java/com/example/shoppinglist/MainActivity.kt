@@ -3,10 +3,9 @@ package com.example.shoppinglist
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shoppinglist.model.GetData.createDataSet
+import com.example.shoppinglist.GetData.Companion.createDataSet
 import com.example.shoppinglist.model.ShopListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.sql.DataSource
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,8 +21,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addList() {
-        val listData = DataSource.createDataSet()
-        listAdapter.submitList(listData)
+        val data = createDataSet()
+        listAdapter.submitList(data)
     }
 
     private fun initRecyclerView() {

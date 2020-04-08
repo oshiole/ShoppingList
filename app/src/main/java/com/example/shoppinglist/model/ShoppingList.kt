@@ -8,4 +8,12 @@ data class ShoppingList(
     var itemImage: String,
 
     var itemPrice: String
-)
+) {
+
+    override fun toString(): String {
+        return "ShoppingList(image='$itemImage', title='$itemTitle', price='$itemPrice', description='$itemDescription')"
+    }
+}
+
+
+
